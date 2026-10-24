@@ -279,25 +279,6 @@ int main(int argc, char** argv)
     // cuBLAS strided batched GEMM
     // --------------------------------------------------------
 
-    // TODO: create a cuBLAS handle
-
-    // TODO: warmup run for 'cublasSgemmStridedBatched'
-    // TODO: note that the leading dimension for all matrices is 'n'
-
-    cudaDeviceSynchronize();
-
-    // TODO: start timing using CUDA events
-    for (int r = 0; r < repeats; ++r) {
-
-        // TODO: call 'cublasSgemmStridedBatched'
-    }
-
-    // TODO: end timing using CUDA events
-
-    // TODO: calculate the time of 'cublasSgemmStridedBatched' using 'cudaEventElapsedTime'
-
-    // TODO: copy the output matrices to CPU in 'h_cublas'
-
     // --------------------------------------------------------
     // Performance and forward error
     // --------------------------------------------------------
@@ -346,6 +327,7 @@ int main(int argc, char** argv)
 
     // --------------------------------------------------------
     // Cleanup
+    // --------------------------------------------------------
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
 
@@ -354,7 +336,6 @@ int main(int argc, char** argv)
     cudaFree(d_A);
     cudaFree(d_B);
     cudaFree(d_C);
-    // --------------------------------------------------------
 
     return 0;
 }
