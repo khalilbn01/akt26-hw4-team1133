@@ -23,7 +23,6 @@ __global__ void batch_gemm_kernel(int n, int batch_size,
                                     const float* B,
                                     float* C)
 {
-    // TODO: write your own kernel here
     __shared__ float sA[MAXN][MAXN];        // sA[col][row] = A(row, col)
     __shared__ float sB[MAXN][MAXN + 1];    // +1 padding avoids shared-memory bank conflicts
 
@@ -174,7 +173,6 @@ int main(int argc, char** argv)
     // --------------------------------------------------------
     // Allocate GPU memory
     // --------------------------------------------------------
-    // TODO: write your allocations here
 
     float *d_A = nullptr, *d_B = nullptr, *d_C = nullptr;
     CHECK(cudaMalloc(&d_A, bytes));
